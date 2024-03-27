@@ -12,10 +12,10 @@ def inputValues():
 
     while True:
         value = input(f"{Fore.GREEN}Anfangsbetrag: {Fore.RESET}")
-        if value.isdigit():
+        try:
             value = float(value)
             break
-        else: 
+        except ValueError:
             print(f"{Fore.RED}Bitte gib einen validen Betrag an{Fore.RESET}")
 
     while True:
@@ -59,4 +59,3 @@ def calculate(currency, value, targetCurrency):
 if __name__ == "__main__":
     currency, value, targetCurrency = inputValues()
     calculate(currency, value, targetCurrency)
-
